@@ -1,0 +1,83 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<section class="main">
+    <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-slide="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img src="{% static '/img/ja1.jpg' %}" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption top-0 mt-4">
+            <p id="fondo1" class="mt-5 fs-3 text-uppercase">¡Dale el cuidado que tu jardin merece!</p>
+            <h1 id="fondo2" class="display-1 fw-bolder text-capitalize">Los mejores productos para tu jardin</h1>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img src="{% static 'img/ja2.jpg' %}" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption top-0 mt-4">
+            <p id="fondo3" class="mt-5 fs-3 text-uppercase">¡Haz que tu hogar florezca con nuestras plantas!</p>
+            <h1 id="fondo4" class="display-1 fw-bolder text-capitalize">Transforma tu espacio exterior</h1>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img src="{% static 'img/ja3.jpg' %}" class="d-block w-100 c-img" alt="...">
+          <div class="carousel-caption top-0 mt-4">
+            <p id="fondo5" class="mt-5 fs-3 text-uppercase">¡Lleva la naturaleza a tu hogar con nuestra selección de plantas!</p>
+            <h1 id="fondo6" class="display-1 fw-bolder text-capitalize">Consigue un oasis verde en tu hogar</h1>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="container mt-3 d-flex flex-column align-items-center">
+    <h1>Nuestra Empresa</h1>
+  </div>
+  <div class="container mt-3">
+    <p>Somos una empresa dedicada a la jardinería y paisajismo, fundada en el año 2020 con el objetivo de crear espacios
+      verdes y armónicos en hogares y empresas.</p>
+    <p>tienda en línea especializada en la venta de artículos de jardín. Ofrecemos una amplia gama de productos de alta
+      calidad, desde herramientas y equipos de jardinería hasta mobiliario y decoración para exteriores.</p>
+    <p>Nos apasiona ayudar a nuestros clientes a crear y mantener hermosos jardines y espacios al aire libre. Por eso, nos
+      esforzamos por ofrecer productos de las mejores marcas y al mejor precio posible.</p>
+    <p>Además, nuestro equipo de atención al cliente está siempre disponible para ayudarlo a encontrar el producto
+      adecuado para sus necesidades y responder a cualquier pregunta que pueda tener. Nuestro objetivo es brindarle la
+      mejor experiencia de compra en línea posible.</p>
+    <p>¡Gracias por elegir nuestra tienda de artículos de jardín! Esperamos ayudarlo a crear el jardín de sus sueños.</p>
+  </div>
+  
+<div class="container">
+<h3>Nuestro Equipo</h3>
+<ul>
+<li>Director General: Raúl Valenzuela.</li>
+<li>Jefe de Diseño: Diego De La Vega.</li>
+</ul>
+<h3>Misión</h3>
+<p>Nuestra misión es crear espacios verdes que inspiren y aporten beneficios para la salud y el bienestar de las
+personas, utilizando técnicas innovadoras y amigables con el medio ambiente.</p>
+<h3>Visión</h3>
+<p>Convertirnos en la empresa líder en jardinería y paisajismo, reconocidos por la calidad y excelencia en nuestros
+servicios.</p>
+</div>
+
+  {% endblock %}
