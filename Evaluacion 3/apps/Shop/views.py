@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 
 def cargarInicio(request):
-    return render(request, "Index.html")
+    productos = Producto.objects.all()
+    return render(request,"Index.html", {"prod" : productos})

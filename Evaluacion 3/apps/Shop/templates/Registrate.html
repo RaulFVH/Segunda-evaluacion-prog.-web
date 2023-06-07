@@ -1,0 +1,76 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container d-flex flex-column align-items-center mt-3">
+    <h1>Registrate</h1>
+    <h6>Ingrese los datos pedidos.</h6>
+  </div>
+
+  <div class="container d-flex flex-column align-items-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="container mt-2">
+          <div class="contenedor">
+            <form action="#">
+              <div class="form-group">
+                <label for="txtNombre">Ingrese Nombre</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ingrese Nombre" id="txtNombre">
+                <small id="valNombre">Debe ingresar su Nombre.</small>
+                <br>
+                <label for="txtApellido">Ingrese Apellido</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ingrese Apellido" id="txtApellido">
+                <small id="valApellido">Debe ingresar su Apellido.</small>
+                <br>
+                <label onblur="validarFormulario()" for="txtRut">Rut</label>
+                <input type="text" class="form-control" placeholder="Ej: 12.345.678-9" id="txtRut">
+                <small id="valRut">Debe ingresar su Rut.</small>
+                <br>
+                <label>Sexo</label>
+                <select name="select">
+                  <option value="value1" selected>Maculino</option>
+                  <option value="value2">Femenino</option>
+                  <option value="value3">No especificado</option>
+                </select>
+              </div>
+            </form>
+          </div>  
+        </div>
+      </div>
+      <div class="col">
+        <div class="container mt-2">
+          <div class="contenedor">
+            <form action="#">
+              <div class="form-group">
+                <label onblur="validarFormulario()" for="txtCelular">Celular</label>
+                <input type="tel" class="form-control" placeholder="Ej: 12345698" id="txtCelular">
+                <small id="valCelular">Debe ingresar su Telefono Celular.</small>
+                <br>
+                <label onblur="validarFormulario()" for="txtCorreo">Ingrese Correo</label>
+                <input type="email" class="form-control" placeholder="ejemplo@ejemplo.com" id="txtCorreo">
+                <small id="valCorreo">Debe ingresar su Correo Electronico.</small>
+                <br>
+                <label onblur="validarFormulario()" for="txtPass">Ingrese Contraseña</label>
+                <input type="password" class="form-control" placeholder="123456" id="txtPass">
+                <small id="valPass">Debe ingresar su Contraseña.</small>
+                <br>
+                <button onclick="validarFormulario()" class="btn btn-primary">Crear Cuenta</button> 
+              </div>
+            </form>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/formulario.js' %}" ></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container d-flex flex-column align-items-center mt-3">
+  <h1>Dejanos Un Mensaje</h1>
+  <h4>Con Todas Tus Dudas.</h4>
+</div>
+
+<div class="container">
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" required>
+  </div>
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Dirección de correo electronico:</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo@ejemplo.com" required>
+  </div>
+  <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">¿Como podemos ayudarte?</label>
+      <textarea class="form-control" id="txtControl" rows="3"></textarea required>
+  </div>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Enviar
+  </button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h6 class="modal-title fs-5" id="exampleModalLabel">¡Mensaje enviado!</h6>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <p style="color: rgb(43, 43, 67);">Gracias por comunicarse con nosotros.</p>
+                  <p style="color: gray;">Alguien se pondrá en contacto pronto contigo.</p>
+              </div>
+              <div class="modal-footer">
+                  <a href="Index.html"><button type="button" class="btn btn-primary">Volve al inicio</button></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+

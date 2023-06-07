@@ -1,0 +1,41 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="box">
+  <div class="container text-center mt-5">
+    <div class="row align-items-start">
+      <div class="col">
+          <h1>Espacio Huerta cuida tus plantas.</h1>
+          <h5>¿Porque es importante colocar musica a tus plantas?</h5>
+          <p>Un estudio realizado en la Universidad de Gante en 2019 encontró que las plantas expuestas a la música
+            durante 3 horas al día tuvieron un mayor crecimiento en comparación con las plantas que no escucharon
+            música. Los investigadores sugirieron que la música podría aumentar la producción de compuestos orgánicos
+            volátiles que promueven el crecimiento de las plantas.</p>
+          <p>A su vez la música podría influenciar también la germinación de las semillas. Un estudio del “Diario de
+            Medicina Alternativa y Complementaria” describe un experimento en el que la música produjo un porcentaje de
+            germinación mayor y una germinación más rápida.</p>
+          <h6 id="esconder">Es por esta razón que Espacio Huerta ha creado una sección especial de música dedicada al desarrollo de
+            tus plantas.</h6>
+      </div>
+      <div class="col">
+        <div class="col">
+          <iframe width="80%" height="445" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/334640586/favorites&amp;{ ADD YOUR PARAMETERS HERE }">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
