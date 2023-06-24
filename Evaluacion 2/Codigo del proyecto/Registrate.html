@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Registrate</title>
+    <link rel="shortcut icon" href="img/My project-1.png" type="image/x-icon">
+</head>
+
+<body onload="ubi()">
+  <nav class="navbar navbar-expand-lg" style="background-color:rgb(255, 240, 223);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="Index.html"><img src="img/My project-1.png" alt=""></a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Registrate.html">Registrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="InicioDeSesion.html">Inicia Sesión</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="Carrito.html">Carro de compras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Api.html">Nuesto Espacio</a>
+              </li>
+            </ul>
+            <div>
+              <p id="reloj"></p>
+            </div>
+            <div class="mini-box">
+              <p id="ubicacion"></p>
+              <p id="temperatura"></p>
+            </div>
+            <div>
+                <button onclick="cambiarModo()" type="button" class="btn btn" id="button-addon">
+                  <svg id="mostrar" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                  </svg>
+                  <svg id="ocultar" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                  </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container d-flex flex-column align-items-center mt-3">
+        <h1>Registrate</h1>
+        <h6>Ingrese los datos pedidos.</h6>
+      </div>
+
+      <div class="container d-flex flex-column align-items-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <div class="container mt-2">
+              <div class="contenedor">
+                <form action="#">
+                  <div class="form-group">
+                    <label for="txtNombre">Ingrese Nombre</label>
+                    <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ingrese Nombre" id="txtNombre">
+                    <small id="valNombre">Debe ingresar su Nombre.</small>
+                    <br>
+                    <label for="txtApellido">Ingrese Apellido</label>
+                    <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ingrese Apellido" id="txtApellido">
+                    <small id="valApellido">Debe ingresar su Apellido.</small>
+                    <br>
+                    <label onblur="validarFormulario()" for="txtRut">Rut</label>
+                    <input type="text" class="form-control" placeholder="Ej: 12.345.678-9" id="txtRut">
+                    <small id="valRut">Debe ingresar su Rut.</small>
+                    <br>
+                    <label>Sexo</label>
+                    <select name="select">
+                      <option value="value1" selected>Maculino</option>
+                      <option value="value2">Femenino</option>
+                      <option value="value3">No especificado</option>
+                    </select>
+                  </div>
+                </form>
+              </div>  
+            </div>
+          </div>
+          <div class="col">
+            <div class="container mt-2">
+              <div class="contenedor">
+                <form action="#">
+                  <div class="form-group">
+                    <label onblur="validarFormulario()" for="txtCelular">Celular</label>
+                    <input type="tel" class="form-control" placeholder="Ej: 12345698" id="txtCelular">
+                    <small id="valCelular">Debe ingresar su Telefono Celular.</small>
+                    <br>
+                    <label onblur="validarFormulario()" for="txtCorreo">Ingrese Correo</label>
+                    <input type="email" class="form-control" placeholder="ejemplo@ejemplo.com" id="txtCorreo">
+                    <small id="valCorreo">Debe ingresar su Correo Electronico.</small>
+                    <br>
+                    <label onblur="validarFormulario()" for="txtPass">Ingrese Contraseña</label>
+                    <input type="password" class="form-control" placeholder="123456" id="txtPass">
+                    <small id="valPass">Debe ingresar su Contraseña.</small>
+                    <br>
+                    <button onclick="validarFormulario()" class="btn btn-primary">Crear Cuenta</button> 
+                  </div>
+                </form>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: rgb(242, 215, 242);">
+        <div class="box">
+          <div class="container text-center mt-5">
+            <div class="row align-items-start">
+              <div class="col">
+                <img style="background-color: rgb(242, 215, 242);" src="img/My project-1.png" alt="">
+              </div>
+              <div class="col">
+                <h6>HORARIO DE ATENCIÓN TIENDA WEB</h6>
+                <p id="p1">Lunes a Viernes:</p>
+                <p id="p1">De 08:00 AM a 18:30</p>
+                <p id="p1">Email: espacio_huerta@gmail.com</p>
+                <br>
+                <h6>CONTACTO</h6>
+                <P id="p1">228241200 (desde Santiago)</P>
+                <P id="p1">447801030 (desde Todo Chile)</P>
+              </div>
+              <div class="col mt-5">
+                <img style="background-color: rgb(242, 215, 242);" src="img/logo-web-pay-plus-300x135.png" width="330" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="container"> 
+        <a href="Ayuda.html" class="btn-flotante">¿Necesitas ayuda?</a> 
+      </div>
+
+      <div style="background-color: #336699; color: #fff; padding: 10px;">
+        ESPACIO HUERTA, Todos los derechos reservados
+      </div>
+
+      <script type="text/javascript"> 
+        function cambiarModo() { 
+          var cuerpoweb = document.body; 
+          cuerpoweb.classList.toggle("oscuro"); 
+        } 
+      </script>
+
+      
+      <script src="js/jquery.validate.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+      <script src="js/Code.js"></script>
+      <script src="js/formulario.js" ></script>
+      <script src="js/Api.js"></script>
+
+      </body>
+</html>
