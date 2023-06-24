@@ -29,3 +29,22 @@ $(function(){
         }
     })
 })
+
+$(function(){
+    $("#fondo1").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+    $("#fondo2").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+    $("#fondo3").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+    $("#fondo4").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+    $("#fondo5").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+    $("#fondo6").css({"background-color": "rgba(7, 201, 255, 0.458)"});
+})
+
+$(function(){
+    $("#btnBuscar").on('click',function(){
+        //console.log("KEYUP");
+        let valor = $("#txtBuscar").val().toLowerCase();
+        $("table tbody tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1)
+        })
+    })
+})
